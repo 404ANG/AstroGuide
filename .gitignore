@@ -1,0 +1,13 @@
+.env
+vendor/
+node_modules/
+database/navigation.sqlite
+data/
+storage/
+uploads/
+bootstrap/cache/
+public/uploads/
+*.log
+*.sqlite
+.idea/
+.vscode/

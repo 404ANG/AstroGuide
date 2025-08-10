@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  nas-navigation:
+    build: .
+    container_name: nas-navigation
+    ports:
+      - "8080:80"
+    volumes:
+      - ./data:/var/www/html/storage
+      - ./uploads:/var/www/html/public/uploads
+    environment:
+      - DB_CONNECTION=sqlite
+      - DB_DATABASE=/var/www/html/database/navigation.sqlite
+      - APP_ENV=production
+      - APP_DEBUG=false
+    restart: unless-stopped
+    networks:
+      - nas-network
+
+networks:
+  nas-network:
+    driver: bridge 

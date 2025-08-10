@@ -1,0 +1,9 @@
+services:
+  nas-navigation:
+    volumes:
+      - ./:/var/www/html
+    environment:
+      - APP_ENV=local
+      - APP_DEBUG=true
+      - DB_CONNECTION=sqlite
+      - DB_DATABASE=/var/www/html/database/navigation.sqlite 
